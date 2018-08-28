@@ -1,0 +1,33 @@
+body {
+    background-color: #232323;
+}
+
+#container {
+    max-width: 600px;
+    margin: 0 auto;
+} 
+
+#headerBar {
+    color: white;
+    text-align: center;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.square {
+    padding-top: 30%;
+    margin: 1.66%;
+    width: 30%;
+    background: purple;
+    float: left;
+}
+
+#navBar {
+    color: blue;
+    background: white center;
+    text-align: center;
+}
+
+div#navBar span {
+    margin-left: 25%;
+}
