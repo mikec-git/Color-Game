@@ -1,20 +1,22 @@
-html {
-    padding: 0;
-}
-
 body {
+    font-family: "Montserrat", "Avenir", "sans-serif";
     background-color: #232323;
+    margin: 0;
 }
 
 #container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
 } 
 
 h1 {
+    padding: 20px 0;
     margin: 0;
-    padding: 0;
-    width:100%;
+    width: 100%;
+    background: steelblue;
+    font-weight: normal;
+    line-height: 1.1;
+    text-transform: uppercase;
 }
 
 #headerBar {
@@ -25,7 +27,6 @@ h1 {
 }
 
 #navBar {
-    color: blue;
     background-color: white;
     text-align: center;
     height: 30px;
@@ -37,8 +38,46 @@ h1 {
     width: 30%;
     background: purple;
     float: left;
+    border-radius: 17.5%;
+    transition: background 0.4s;
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
 }
 
 div#navBar span {
     max-width: 600px;
+}
+
+.selected {
+    color: white;
+    background-color: steelblue;
+}
+
+#rgb {
+    font-size: 200%;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: steelblue;
+    font-size: inherit;
+    transition: all 0.3s;
+    -webkit-transition:  all 0.3s;
+    -moz-transition:  all 0.3s;
+    outline: none;
+}
+
+button:hover{
+    color: white;
+    background-color: steelblue;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
 }
