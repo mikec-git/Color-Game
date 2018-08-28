@@ -1,24 +1,41 @@
-var colors = generateRandomColors(6);
+var colors      = generateRandomColors(6);
 var pickedColor = pickRandomColor(colors);
 
-var header = document.querySelector("#headerBar");
-var squares = document.querySelectorAll(".square");
-var rgbDisplay = document.querySelector("#rgb");
+var resetButton = document.querySelector("#reset");
+var header      = document.querySelector("#headerBar");
+var squares     = document.querySelectorAll(".square");
+var rgbDisplay  = document.querySelector("#rgb");
 var messageDisplay = document.querySelector("#message");
 
-for(var i = 0; i < squares.length; i++){
-    // Initial Colors
-    squares[i].style.backgroundColor = colors[i];
+rgbDisplay.textContent = pickedColor;
 
-    // Click listeners
+for(var i = 0; i < squares.length; i++){
+    squares[i].style.backgroundColor = colors[i];
     squares[i].addEventListener("click", squareClicked);
+};
+
+resetButton.addEventListener("click", restart);
+
+function restart(){
+    colors = generateRandomColors(6);
+    pickedColor = pickRandomColor(colors);
+
+    for(var i = 0; i < squares.length; i++){
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].addEventListener("click", squareClicked);
+    };
+
+    rgbDisplay.textContent = pickedColor;
+    header.style.backgroundColor    = "#232323";
+    resetButton.textContent         = "New Colors";
 };
 
 function squareClicked(){
     var clickedColor = this.style.backgroundColor;
     console.log(clickedColor, pickedColor);
     if(clickedColor === pickedColor){
-        messageDisplay.textContent = "Correct!";
+        messageDisplay.textContent  = "Correct!";
+        resetButton.textContent     = "Play Again?";
         allSameColor(pickedColor);
     }
     else{
@@ -36,9 +53,9 @@ function allSameColor(color){
     header.style.backgroundColor = pickedColor;
 };
 
-function pickRandomColor(colorArr){
-    var random = Math.floor(Math.random() * colorArr.length + 1);
-    return colorArr[random];
+function pickRandomColor(){
+    var random = Math.floor(Math.random() * colors.length + 1);
+    return colors[random];
 };
 
 function generateRandomColors(num){
@@ -57,5 +74,3 @@ function randomColor(){
     
     return "rgb(" + r + ", " + g + ", " + b + ")";
 };
-
-rgbDisplay.textContent = pickedColor;

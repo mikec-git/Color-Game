@@ -1,3 +1,7 @@
+html {
+    padding: 0;
+}
+
 body {
     background-color: #232323;
 }
@@ -7,11 +11,24 @@ body {
     margin: 0 auto;
 } 
 
+h1 {
+    margin: 0;
+    padding: 0;
+    width:100%;
+}
+
 #headerBar {
     color: white;
     text-align: center;
     margin: 0 0;
     padding: 0 0;
+}
+
+#navBar {
+    color: blue;
+    background-color: white;
+    text-align: center;
+    height: 30px;
 }
 
 .square {
@@ -22,12 +39,6 @@ body {
     float: left;
 }
 
-#navBar {
-    color: blue;
-    background: white center;
-    text-align: center;
-}
-
 div#navBar span {
-    margin-left: 25%;
+    max-width: 600px;
 }
