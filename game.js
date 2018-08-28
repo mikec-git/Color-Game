@@ -1,4 +1,4 @@
-var numSquares = 6;
+var numSquares = 9;
 var colors      = [];
 var pickedColor = null;
 
@@ -23,15 +23,18 @@ function setupModebuttons(){
         modeButtons[i].addEventListener("click", function(){
             modeButtons[0].classList.remove("selected");
             modeButtons[1].classList.remove("selected");
+            modeButtons[2].classList.remove("selected");
             this.classList.add("selected");
     
             if(this.textContent === "Easy"){
                 numSquares = 3;
             }
-            else if(this.textContent === "Hard"){
+            else if(this.textContent === "Medium"){
                 numSquares = 6;
             }
-            
+            else if(this.textContent === "Hard"){
+                numSquares = 9;
+            }            
             reset();
         });
     }
@@ -40,6 +43,7 @@ function setupModebuttons(){
 function setupSquares(){
     for(var i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = colors[i];
+
         squares[i].addEventListener("click", function(){
             var clickedColor = this.style.backgroundColor;
         
@@ -77,10 +81,7 @@ function reset(){
     };    
 }
 
-
-resetButton.addEventListener("click", function(){
-    reset();
-});
+resetButton.addEventListener("click", reset);
 
 function allSameColor(color){
     for(var i = 0; i < squares.length; i++){
