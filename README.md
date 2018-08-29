@@ -3,9 +3,21 @@ This is a color guessing game where the user must choose the correct color box b
 
 ### Game Modes
 <ul>
-  <li>Easy: three color squares</li>
-  <li>Medium: six color squares</li>
-  <li>Hard: nine color squares</li>
+  <li>Easy: three color squares
+    <ul>
+      <li>1 point gained if won</li>
+    </ul>
+  </li>
+  <li>Medium: six color squares
+    <ul>
+      <li>2 points gained if won</li>
+    </ul>
+  </li>
+  <li>Hard: nine color squares
+    <ul>
+      <li>3 points gained if won</li>
+    </ul>
+  </li>
 </ul>
 
 <div>
@@ -15,4 +27,4 @@ This is a color guessing game where the user must choose the correct color box b
 ### How to Win
 Click the squares to match the RGB code shown at the top of the page. If correctly selected, all of the squares will appear and change into the winning color.
 
-<img src="Color game/ColorGameGif.gif">
+<img src="ColorGameGif.gif">
